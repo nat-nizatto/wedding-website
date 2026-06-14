@@ -14,6 +14,34 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Custom Overrides to Fix Layout & Visibility Bugs -->
+  <style>
+    /* Remove dark background from venue image container */
+    .venue-image-container {
+      background: transparent !important;
+      background-color: transparent !important;
+    }
+    
+    /* Improve padding on the Honeymoon gift section */
+    .gifts-section {
+      padding: 100px 0 !important;
+    }
+
+    /* Improve general spacing and padding of the RSVP section */
+    .rsvp-section {
+      padding: 100px 0 !important;
+    }
+    .rsvp-form {
+      margin-top: 40px;
+    }
+
+    /* FIX: Force browser to hide the success card when the 'hidden' attribute is present.
+       This stops the external CSS from forcing it to stay visible prematurely. */
+    [hidden] {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -172,7 +200,7 @@
         <p class="section-lead-text">Please share your plans with us by **February 28th, 2027** by filling out the form below.</p>
         
         <form id="rsvp-form" class="rsvp-form" action="https://api.web3forms.com/submit" method="POST">
-          <!-- Web3Forms Access Key (Replace with your key) -->
+          <!-- Web3Forms Access Key -->
           <input type="hidden" name="access_key" value="b549059b-16f1-4473-adde-bf17cfb1f7c1">
           <div class="form-group">
             <label for="guest-name">GUEST FULL NAME(S)</label>
@@ -201,7 +229,7 @@
             </div>
           </div>
 
-          <!-- Attendance-conditional block using CSS :has() or JS toggle -->
+          <!-- Attendance-conditional block -->
           <div id="attendance-details" class="attendance-conditional-block">
             
             <div class="form-group">
@@ -257,7 +285,7 @@
           <button type="submit" class="btn btn-primary full-width">SUBMIT RSVP</button>
         </form>
 
-        <!-- Form Success State -->
+        <!-- Form Success State (Hidden by default until JS unhides it) -->
         <div id="rsvp-success" class="rsvp-success-card" hidden>
           <div class="success-icon" aria-hidden="true">✓</div>
           <h3>THANK YOU</h3>
@@ -270,12 +298,11 @@
     <!-- Divider Line -->
     <hr class="section-divider">
 
-    <!-- 5. Gifts Note Section (Replaces Registry) -->
+    <!-- 5. Gifts Note Section -->
     <section id="gifts" class="gifts-section scroll-reveal">
       <div class="container small-width text-center">
         <h2 class="section-title">HONEYMOON FUND & GIFTS</h2>
         <p class="section-lead-text">Your presence at our wedding is the greatest gift of all. We truly do not expect any gifts; however, should you wish to celebrate with a gesture, a contribution towards our honeymoon adventures would be warmly received and appreciated.</p>
-        <div class="honey-gift-symbol" aria-hidden="true">🕊️</div>
       </div>
     </section>
 
@@ -289,7 +316,6 @@
         <p class="section-lead-text">Here are some answers to common questions. If you need anything else, please reach out to us!</p>
         
         <div class="accordion-group">
-          <!-- Mutually exclusive details accordions via name attribute -->
           <details class="faq-item" name="wedding-faq" open>
             <summary class="faq-summary">
               <span>What is the dress code?</span>
@@ -349,7 +375,7 @@
   <footer class="site-footer">
     <div class="footer-container">
       <p class="footer-names">KATHERINE & NATHANIEL</p>
-      <p class="footer-date">13TH MAY 2027 • SHARPTHORNE, WEST SUSSEX</p>
+      <p class="footer-date">13TH MAY 2027 • SHRAPTHORNE, WEST SUSSEX</p>
       <p class="footer-tagline">Made with love. See you there!</p>
       <p class="footer-copyright">&copy; 2027 Katherine Fox & Nathaniel Hill. All rights reserved.</p>
     </div>
