@@ -64,6 +64,11 @@ body {
   overflow-x: hidden;
 }
 
+/* Global utility to prevent hidden elements from showing */
+[hidden] {
+  display: none !important;
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
@@ -251,7 +256,6 @@ a {
   border-color: var(--accent-pink);
 }
 
-/* Nav RSVP CTA Button specifically */
 .nav-rsvp-btn {
   background-color: var(--accent-pink-light);
   color: var(--accent-pink-dark) !important;
@@ -267,7 +271,6 @@ a {
   border-color: var(--accent-pink) !important;
 }
 
-/* Mobile Menu Toggle */
 .mobile-menu-toggle {
   display: none;
   background: none;
@@ -389,7 +392,6 @@ a {
   padding-left: 2rem;
 }
 
-/* Timeline Vertical Line */
 .timeline::before {
   content: '';
   position: absolute;
@@ -410,7 +412,6 @@ a {
   margin-bottom: 0;
 }
 
-/* Timeline Dot */
 .timeline-item::before {
   content: '';
   position: absolute;
@@ -498,11 +499,14 @@ a {
   color: var(--text-muted);
 }
 
+/* FIXED: Removed dark background elements from the container */
 .venue-image-container {
   width: 100%;
   height: 100%;
   min-height: 300px;
   overflow: hidden;
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 .venue-image {
@@ -611,12 +615,6 @@ a {
   color: var(--text-charcoal);
 }
 
-.honey-gift-symbol {
-  font-size: 3rem;
-  margin-top: 2rem;
-  opacity: 0.85;
-}
-
 .hotel-card:hover {
   border-color: var(--border-color-hover);
   box-shadow: 0 10px 30px rgba(0,0,0,0.01);
@@ -667,11 +665,27 @@ a {
 }
 
 /* ==========================================================================
+   Honeymoon Gifts Note Section
+   ========================================================================== */
+
+/* FIXED: Changed selector from .registry-section to .gifts-section to match the HTML 
+   and increased padding for an elegant breathing room look */
+.gifts-section {
+  padding: 11rem 0;
+}
+
+/* FIXED: Removed dove reference to clean up code footprint */
+.honey-gift-symbol {
+  display: none !important;
+}
+
+/* ==========================================================================
    RSVP Section
    ========================================================================== */
 
+/* FIXED: Enhanced padding and alignment spacing */
 .rsvp-section {
-  padding: 8rem 0;
+  padding: 10rem 0;
   background-color: var(--bg-offwhite);
 }
 
@@ -679,7 +693,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   transition: opacity 0.3s ease;
 }
 
@@ -722,7 +736,6 @@ a {
   box-shadow: 0 0 0 1px var(--accent-pink-dark);
 }
 
-/* Styling custom selects */
 .select-wrapper {
   position: relative;
   width: 100%;
@@ -750,7 +763,6 @@ a {
   cursor: pointer;
 }
 
-/* Elegant Radio Cards */
 .radio-card-group {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -792,14 +804,12 @@ a {
   color: var(--text-muted);
 }
 
-/* Checked state */
 .radio-card input[type="radio"]:checked + .radio-card-content {
   border-color: var(--accent-sage-dark);
   background-color: var(--accent-sage-light);
   color: var(--accent-sage-dark);
 }
 
-/* Validation Feedback & States */
 .error-msg {
   display: none;
   font-size: 0.75rem;
@@ -817,13 +827,10 @@ a {
   display: block;
 }
 
-/* Conditional Attendance Section via CSS :has() */
-/* If 'decline' is checked, hide the meal selection block */
 body:has(input[value="decline"]:checked) .attendance-conditional-block {
   display: none;
 }
 
-/* Transition wrapper for smooth display */
 .attendance-conditional-block {
   display: flex;
   flex-direction: column;
@@ -832,6 +839,7 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
 }
 
 /* Success Card */
+/* FIXED: Handled visibility restriction context using [hidden] constraint utility to stop structural leakage */
 .rsvp-success-card {
   display: flex;
   flex-direction: column;
@@ -842,6 +850,10 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   padding: 4rem;
   text-align: center;
   animation: fade-in-scale 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.rsvp-success-card[hidden] {
+  display: none !important;
 }
 
 .success-icon {
@@ -882,25 +894,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
 }
 
 /* ==========================================================================
-   Registry Section
-   ========================================================================== */
-
-.registry-section {
-  padding: 8rem 0;
-}
-
-.registry-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.registry-buttons .btn {
-  min-width: 180px;
-}
-
-/* ==========================================================================
    Q&A / FAQs Section (Accordion)
    ========================================================================== */
 
@@ -926,7 +919,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
 }
 
-/* Custom summary */
 .faq-summary {
   display: flex;
   justify-content: space-between;
@@ -937,11 +929,10 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   letter-spacing: 0.05em;
   color: var(--text-charcoal);
   cursor: pointer;
-  list-style: none; /* Hides default marker in Firefox/Chrome */
+  list-style: none;
   user-select: none;
 }
 
-/* Hide webkit default summary marker */
 .faq-summary::-webkit-details-marker {
   display: none;
 }
@@ -953,7 +944,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   display: block;
 }
 
-/* Stylized plus-minus using CSS pseudo elements */
 .faq-icon::before,
 .faq-icon::after {
   content: '';
@@ -962,7 +952,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Horizontal line */
 .faq-icon::before {
   top: 6px;
   left: 0;
@@ -970,7 +959,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   height: 1px;
 }
 
-/* Vertical line */
 .faq-icon::after {
   top: 0;
   left: 6px;
@@ -978,7 +966,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   height: 14px;
 }
 
-/* Open state: rotate vertical line to hide it, making a minus */
 .faq-item[open] .faq-icon::after {
   transform: rotate(90deg);
   opacity: 0;
@@ -988,7 +975,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   transform: rotate(180deg);
 }
 
-/* Inner content panel styling */
 .faq-content {
   padding: 0 2.2rem 2.2rem 2.2rem;
   border-top: none;
@@ -1055,7 +1041,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
    Scroll-Driven Animations & Performance
    ========================================================================== */
 
-/* Native CSS Scroll animations for browsers that support it */
 @media (prefers-reduced-motion: no-preference) {
   @supports ((animation-timeline: view()) and (animation-range: entry)) {
     @keyframes fade-in-up {
@@ -1072,13 +1057,10 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
     .scroll-reveal {
       animation: fade-in-up auto linear forwards;
       animation-timeline: view();
-      /* Run animation starting when element enters bottom of viewport 
-         and finish when it is 30% of the way in. */
       animation-range: entry 10% entry 45%;
     }
   }
 
-  /* Fallback scroll animation style for browsers that do not support native CSS scroll-timeline (Safari/Firefox) */
   @supports not ((animation-timeline: view()) and (animation-range: entry)) {
     .scroll-reveal {
       opacity: 0;
@@ -1134,11 +1116,10 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
 }
 
 /* ==========================================================================
-   Responsive Media Queries (Mobile-first fallback / overrides)
+   Responsive Media Queries
    ========================================================================== */
 
 @media (max-width: 1024px) {
-  /* Grid Layouts display 2x2 on tablet */
   .schedule-grid.schedule-four-cols,
   .hotels-grid.hotels-four-cols {
     grid-template-columns: repeat(2, 1fr);
@@ -1146,7 +1127,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
 }
 
 @media (max-width: 900px) {
-  /* Grid Layouts collapse */
   .venue-info-card {
     grid-template-columns: 1fr;
   }
@@ -1180,7 +1160,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
     font-size: 1rem;
   }
 
-  /* Nav menu toggle visible, normal menu hidden */
   .main-nav {
     display: none;
   }
@@ -1189,7 +1168,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
     display: flex;
   }
   
-  /* Hamburger open state */
   .mobile-menu-toggle[aria-expanded="true"] .hamburger-bar:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
   }
@@ -1210,16 +1188,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
     padding: 5px;
   }
   
-  .registry-buttons {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-  }
-  
-  .registry-buttons .btn {
-    width: 100%;
-  }
-
   .radio-card-group {
     grid-template-columns: 1fr;
     gap: 1rem;
