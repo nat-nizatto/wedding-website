@@ -191,36 +191,51 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Form is valid - run submission animation
+    // Form is valid - send data to Web3Forms
     const submitBtn = rsvpForm.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.textContent;
     submitBtn.textContent = 'SUBMITTING...';
     submitBtn.disabled = true;
 
-    // Simulate API request call
-    setTimeout(() => {
-      // Reset button state
+    const formData = new FormData(rsvpForm);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(async (response) => {
+      let json = await response.json();
       submitBtn.textContent = originalBtnText;
       submitBtn.disabled = false;
 
-      // Personalize the success message based on attendance choice
-      if (isAttending) {
-        const guestFirstName = guestNameInput.value.split('&')[0].split('and')[0].trim();
-        successMessage.innerHTML = `Your response has been received. We are thrilled to celebrate with you in West Sussex, <strong>${guestFirstName}</strong>!`;
+      if (response.status === 200) {
+        // Personalize the success message based on attendance choice
+        if (isAttending) {
+          const guestFirstName = guestNameInput.value.split('&')[0].split('and')[0].trim();
+          successMessage.innerHTML = `Your response has been received. We are thrilled to celebrate with you in West Sussex, <strong>${guestFirstName}</strong>!`;
+        } else {
+          successMessage.textContent = 'Thank you for letting us know. We will miss you, but we appreciate your response and will be celebrating from afar!';
+        }
+
+        // Smoothly hide form and show success card
+        rsvpForm.style.opacity = '0';
+        setTimeout(() => {
+          rsvpForm.setAttribute('hidden', '');
+          rsvpSuccess.removeAttribute('hidden');
+          // Scroll slightly to success card
+          rsvpSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 300);
       } else {
-        successMessage.textContent = 'Thank you for letting us know. We will miss you, but we appreciate your response and will be celebrating from afar!';
+        console.error(json);
+        alert(json.message || "Something went wrong. Please check your Access Key and try again.");
       }
-
-      // Smoothly hide form and show success card
-      rsvpForm.style.opacity = '0';
-      setTimeout(() => {
-        rsvpForm.setAttribute('hidden', '');
-        rsvpSuccess.removeAttribute('hidden');
-        // Scroll slightly to success card
-        rsvpSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 300);
-
-    }, 1500);
+    })
+    .catch(error => {
+      console.error(error);
+      submitBtn.textContent = originalBtnText;
+      submitBtn.disabled = false;
+      alert("Form submission failed. Please check your internet connection and try again.");
+    });
   });
 
   // Edit Response behavior
