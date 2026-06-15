@@ -6,17 +6,18 @@
   <title>Katherine & Nathaniel — Wedding 2027</title>
   <meta name="description" content="The wedding celebration of Katherine Fox and Nathaniel Hill at The Ravenswood in Sussex. Thursday, 13th May 2027.">
   
-  <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Google Fonts: Libre Baskerville (Headings) & Inter (Body) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   
-  <!-- Stylesheets -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Custom Overrides to Fix Layout & Visibility Bugs -->
   <style>
+    /* Center text in the accommodation boxes */
+    .hotel-card {
+      text-align: center;
+    }
+
     /* Remove dark background from venue image container */
     .venue-image-container {
       background: transparent !important;
@@ -45,7 +46,6 @@
 </head>
 <body>
 
-  <!-- Sticky Navigation Header -->
   <header id="main-header" class="site-header">
     <div class="header-container">
       <a href="#" class="logo" aria-label="Home">K & N</a>
@@ -58,14 +58,12 @@
           <li><a href="#faq">Q&A</a></li>
         </ul>
       </nav>
-      <!-- Mobile Menu Toggle Button -->
       <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle Navigation Menu">
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
       </button>
     </div>
-    <!-- Mobile Nav Drawer -->
     <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile Navigation">
       <ul class="mobile-nav-links">
         <li><a href="#schedule">Schedule</a></li>
@@ -77,10 +75,8 @@
     </nav>
   </header>
 
-  <!-- Main Content Area -->
   <main>
     
-    <!-- 1. Hero Section -->
     <section id="hero" class="hero-section">
       <div class="hero-content">
         <div class="hero-names-wrapper">
@@ -89,7 +85,7 @@
         </div>
         
         <div class="hero-image-container">
-          <img src="images/couple.jpg" alt="Katherine Fox & Nathaniel Hill" class="hero-image" fetchpriority="high">
+          <img src="images/IMG_9078 - new comp.jpg" alt="Katherine Fox & Nathaniel Hill" class="hero-image" fetchpriority="high">
         </div>
         
         <div class="hero-details">
@@ -100,10 +96,8 @@
       </div>
     </section>
 
-    <!-- Divider Line -->
     <hr class="section-divider">
 
-    <!-- 2. Schedule of Events Section -->
     <section id="schedule" class="schedule-section scroll-reveal">
       <div class="container">
         <h2 class="section-title">THE SCHEDULE</h2>
@@ -149,10 +143,8 @@
       </div>
     </section>
 
-    <!-- Divider Line -->
     <hr class="section-divider">
 
-    <!-- 3. Accommodations Section -->
     <section id="accommodations" class="accommodations-section scroll-reveal">
       <div class="container">
         <h2 class="section-title">ACCOMMODATIONS</h2>
@@ -190,17 +182,14 @@
       </div>
     </section>
 
-    <!-- Divider Line -->
     <hr class="section-divider">
 
-    <!-- 4. Interactive RSVP & Meal Selection Form -->
     <section id="rsvp" class="rsvp-section scroll-reveal">
       <div class="container small-width">
         <h2 class="section-title">RSVP</h2>
         <p class="section-lead-text">Please share your plans with us by **February 28th, 2027** by filling out the form below.</p>
         
         <form id="rsvp-form" class="rsvp-form" action="https://api.web3forms.com/submit" method="POST">
-          <!-- Web3Forms Access Key -->
           <input type="hidden" name="access_key" value="b549059b-16f1-4473-adde-bf17cfb1f7c1">
           <div class="form-group">
             <label for="guest-name">GUEST FULL NAME(S)</label>
@@ -229,7 +218,6 @@
             </div>
           </div>
 
-          <!-- Attendance-conditional block -->
           <div id="attendance-details" class="attendance-conditional-block">
             
             <div class="form-group">
@@ -285,7 +273,6 @@
           <button type="submit" class="btn btn-primary full-width">SUBMIT RSVP</button>
         </form>
 
-        <!-- Form Success State (Hidden by default until JS unhides it) -->
         <div id="rsvp-success" class="rsvp-success-card" hidden>
           <div class="success-icon" aria-hidden="true">✓</div>
           <h3>THANK YOU</h3>
@@ -295,10 +282,8 @@
       </div>
     </section>
 
-    <!-- Divider Line -->
     <hr class="section-divider">
 
-    <!-- 5. Gifts Note Section -->
     <section id="gifts" class="gifts-section scroll-reveal">
       <div class="container small-width text-center">
         <h2 class="section-title">HONEYMOON FUND & GIFTS</h2>
@@ -306,10 +291,8 @@
       </div>
     </section>
 
-    <!-- Divider Line -->
     <hr class="section-divider">
 
-    <!-- 6. Q&A / FAQs Section -->
     <section id="faq" class="faq-section scroll-reveal">
       <div class="container small-width">
         <h2 class="section-title">QUESTIONS & ANSWERS</h2>
@@ -371,17 +354,15 @@
 
   </main>
 
-  <!-- Footer Section -->
   <footer class="site-footer">
     <div class="footer-container">
       <p class="footer-names">KATHERINE & NATHANIEL</p>
       <p class="footer-date">13TH MAY 2027 • SHRAPTHORNE, WEST SUSSEX</p>
       <p class="footer-tagline">Made with love. See you there!</p>
-      <p class="footer-copyright">&copy; 2027 Katherine Fox & Nathaniel Hill. All rights reserved.</p>
+      <p class="footer-copyright">© 2027 Katherine Fox & Nathaniel Hill. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
