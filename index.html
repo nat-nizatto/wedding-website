@@ -184,7 +184,7 @@
 
     <hr class="section-divider">
 
-    <section id="rsvp" class="rsvp-section scroll-reveal">
+<section id="rsvp" class="rsvp-section scroll-reveal">
       <div class="container small-width">
         <h2 class="section-title">RSVP</h2>
         <p class="section-lead-text">Please share your plans with us by **February 28th, 2027**.</p>
@@ -192,8 +192,8 @@
         <div id="rsvp-portal" class="rsvp-form" style="text-align: center;">
           <div class="form-group">
             <label for="search-name" style="letter-spacing: 2px; font-weight: 600;">ENTER YOUR FULL NAME</label>
-            <input type="text" id="search-name" placeholder="e.g. John Smith" style="max-width: 400px; margin: 15px auto; display: block; text-align: center;">
-            <span class="error-msg" id="lookup-error" style="display: none; color: #b54905; margin-bottom: 15px;">We couldn't find that name. Please check your spelling or try your partner's full name.</span>
+            <input type="text" id="search-name" placeholder="e.g. Katherine Fox" style="max-width: 400px; margin: 15px auto; display: block; text-align: center;">
+            <span class="error-msg" id="lookup-error" style="display: none; color: #b54905; margin-bottom: 15px;"></span>
           </div>
           <button type="button" id="btn-find-invite" class="btn btn-primary" style="margin: 0 auto;">FIND MY INVITATION</button>
         </div>
@@ -203,131 +203,9 @@
           
           <input type="hidden" id="wb3-household" name="household_id">
 
-          <div id="smart-g1-section" style="display: none; margin-bottom: 40px;">
-            <h3 class="smart-guest-header">Guest 1: <span id="label-g1-name" class="smart-guest-name-highlight"></span></h3>
-            <input type="hidden" id="input-g1-name" name="g1_name">
-            
-            <div class="form-group">
-              <span class="group-label">ATTENDANCE</span>
-              <div class="radio-card-group">
-                <label class="radio-card">
-                  <input type="radio" id="g1-rsvp-accept" name="g1_attendance" value="accept" checked>
-                  <span class="radio-card-content">
-                    <span class="title">Accepts with pleasure</span>
-                    <span class="desc" id="g1-accept-desc">Can't wait to celebrate!</span>
-                  </span>
-                </label>
-                <label class="radio-card">
-                  <input type="radio" id="g1-rsvp-decline" name="g1_attendance" value="decline">
-                  <span class="radio-card-content">
-                    <span class="title">Declines with regret</span>
-                    <span class="desc">Will be celebrating from afar.</span>
-                  </span>
-                </label>
-              </div>
-            </div>
+          <div id="dynamic-guests-container"></div>
 
-            <div id="g1-meals-container" class="attendance-conditional-block">
-              <div class="form-group">
-                <label for="g1-meal-starter">STARTER SELECTION</label>
-                <div class="select-wrapper">
-                  <select id="g1-meal-starter" name="g1_meal_starter">
-                    <option value="" disabled selected>Select a starter...</option>
-                    <option value="Meat">BBQ Beef Brisket Slider, Thrice Cooked Chunky Chips, Beetroot Slaw</option>
-                    <option value="Veggie">Tomato, Mozzarella and Basil Tarte Tatin, Roasted Pepper Giant Cous Cous, Balsamic Dressing</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="g1-meal-main">MAIN COURSE SELECTION</label>
-                <div class="select-wrapper">
-                  <select id="g1-meal-main" name="g1_meal_main">
-                    <option value="" disabled selected>Select a main course...</option>
-                    <option value="Meat">Oyster Mushroom stuffed Ballotine of Chicken wrapped in Parma Ham, Salse Verde, Roast Carrots, Dauphinoise Potatoes</option>
-                    <option value="Veggie">Vegan Sausages, Mashed Potatoes, Roast Vegetables, Onion Gravy, Crispy Onions</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="g1-meal-dessert">DESSERT SELECTION</label>
-                <div class="select-wrapper">
-                  <select id="g1-meal-dessert" name="g1_meal_dessert">
-                    <option value="" disabled selected>Select a dessert...</option>
-                    <option value="Lemon">Lemon Puddings Done Three Ways (Lemon Syllabub, Lemon Meringue Pie, Lemon Cheesecake)</option>
-                    <option value="Vegan">Vegan Chocolate and Coconut Tart, Mango and Passionfruit</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="g1-dietary">DIETARY RESTRICTIONS & ALLERGIES</label>
-                <textarea id="g1-dietary" name="g1_dietary" rows="2" placeholder="e.g. Gluten-free, nut allergy..."></textarea>
-              </div>
-            </div>
-          </div>
-
-          <div id="smart-g2-section" style="display: none; margin-bottom: 40px;">
-            <h3 class="smart-guest-header">Guest 2: <span id="label-g2-name" class="smart-guest-name-highlight"></span></h3>
-            <input type="hidden" id="input-g2-name" name="g2_name">
-            
-            <div class="form-group">
-              <span class="group-label">ATTENDANCE</span>
-              <div class="radio-card-group">
-                <label class="radio-card">
-                  <input type="radio" id="g2-rsvp-accept" name="g2_attendance" value="accept" checked>
-                  <span class="radio-card-content">
-                    <span class="title">Accepts with pleasure</span>
-                    <span class="desc" id="g2-accept-desc">Can't wait to celebrate!</span>
-                  </span>
-                </label>
-                <label class="radio-card">
-                  <input type="radio" id="g2-rsvp-decline" name="g2_attendance" value="decline">
-                  <span class="radio-card-content">
-                    <span class="title">Declines with regret</span>
-                    <span class="desc">Will be celebrating from afar.</span>
-                  </span>
-                </label>
-              </div>
-            </div>
-
-            <div id="g2-meals-container" class="attendance-conditional-block">
-              <div class="form-group">
-                <label for="g2-meal-starter">STARTER SELECTION</label>
-                <div class="select-wrapper">
-                  <select id="g2-meal-starter" name="g2_meal_starter">
-                    <option value="" disabled selected>Select a starter...</option>
-                    <option value="Meat">BBQ Beef Brisket Slider, Thrice Cooked Chunky Chips, Beetroot Slaw</option>
-                    <option value="Veggie">Tomato, Mozzarella and Basil Tarte Tatin, Roasted Pepper Giant Cous Cous, Balsamic Dressing</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="g2-meal-main">MAIN COURSE SELECTION</label>
-                <div class="select-wrapper">
-                  <select id="g2-meal-main" name="g2_meal_main">
-                    <option value="" disabled selected>Select a main course...</option>
-                    <option value="Meat">Oyster Mushroom stuffed Ballotine of Chicken wrapped in Parma Ham, Salse Verde, Roast Carrots, Dauphinoise Potatoes</option>
-                    <option value="Veggie">Vegan Sausages, Mashed Potatoes, Roast Vegetables, Onion Gravy, Crispy Onions</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="g2-meal-dessert">DESSERT SELECTION</label>
-                <div class="select-wrapper">
-                  <select id="g2-meal-dessert" name="g2_meal_dessert">
-                    <option value="" disabled selected>Select a dessert...</option>
-                    <option value="Lemon">Lemon Puddings Done Three Ways (Lemon Syllabub, Lemon Meringue Pie, Lemon Cheesecake)</option>
-                    <option value="Vegan">Vegan Chocolate and Coconut Tart, Mango and Passionfruit</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="g2-dietary">DIETARY RESTRICTIONS & ALLERGIES</label>
-                <textarea id="g2-dietary" name="g2_dietary" rows="2" placeholder="e.g. Gluten-free, nut allergy..."></textarea>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group" style="margin-top: 30px;">
+          <div class="form-group" style="margin-top: 40px; border-top: 2px solid rgba(0,0,0,0.05); padding-top: 30px;">
             <label for="song-request">DANCE FLOOR ANTHEM</label>
             <input type="text" id="song-request" name="song_request" placeholder="What song will get you dancing?">
           </div>
@@ -343,6 +221,81 @@
         </div>
       </div>
     </section>
+
+    <template id="guest-card-template">
+      <div class="guest-card-block" style="margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid rgba(0,0,0,0.1);">
+        
+        <h3 class="smart-guest-header" style="font-family: 'Libre Baskerville', serif; font-size: 1.3rem; margin: 30px 0 15px 0;">
+          GUEST: <span class="guest-display-name" style="color: #b54905; font-style: italic;"></span>
+        </h3>
+        
+        <input type="hidden" class="hidden-guest-name">
+        <input type="hidden" class="hidden-guest-tier">
+
+        <div class="form-group">
+          <span class="group-label">ATTENDANCE</span>
+          <div class="radio-card-group">
+            <label class="radio-card">
+              <input type="radio" class="radio-accept" value="accept" checked>
+              <span class="radio-card-content">
+                <span class="title">Accepts with pleasure</span>
+                <span class="attendance-desc-text">Can't wait to celebrate!</span>
+              </span>
+            </label>
+            
+            <label class="radio-card">
+              <input type="radio" class="radio-decline" value="decline">
+              <span class="radio-card-content">
+                <span class="title">Declines with regret</span>
+                <span class="desc">Will be celebrating from afar.</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="meals-conditional-container" style="display: block;">
+          
+          <div class="form-group">
+            <label class="label-starter">STARTER SELECTION</label>
+            <div class="select-wrapper">
+              <select class="select-starter">
+                <option value="" disabled selected>Select a starter...</option>
+                <option value="Meat">BBQ Beef Brisket Slider, Thrice Cooked Chunky Chips, Beetroot Slaw</option>
+                <option value="Veggie">Tomato, Mozzarella and Basil Tarte Tatin, Roasted Pepper Giant Cous Cous, Balsamic Dressing</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="label-main">MAIN COURSE SELECTION</label>
+            <div class="select-wrapper">
+              <select class="select-main">
+                <option value="" disabled selected>Select a main course...</option>
+                <option value="Meat">Oyster Mushroom stuffed Ballotine of Chicken wrapped in Parma Ham, Salse Verde, Roast Carrots, Dauphinoise Potatoes</option>
+                <option value="Veggie">Vegan Sausages, Mashed Potatoes, Roast Vegetables, Onion Gravy, Crispy Onions</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="label-dessert">DESSERT SELECTION</label>
+            <div class="select-wrapper">
+              <select class="select-dessert">
+                <option value="" disabled selected>Select a dessert...</option>
+                <option value="Lemon">Lemon Puddings Done Three Ways (Lemon Syllabub, Lemon Meringue Pie, Lemon Cheesecake)</option>
+                <option value="Vegan">Vegan Chocolate and Coconut Tart, Mango and Passionfruit</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="label-dietary">DIETARY RESTRICTIONS & ALLERGIES</label>
+            <textarea class="textarea-dietary" rows="2" placeholder="e.g. Gluten-free, nut allergy, vegan, none..."></textarea>
+          </div>
+
+        </div>
+      </div>
+    </template>
 
     <hr class="section-divider">
 
