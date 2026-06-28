@@ -61,7 +61,7 @@ const weddingGuestDatabase = [
         "tier": "day"
       },
       {
-        "name": "Katy Ying Yu",
+        "name": "Katy",
         "tier": "evening"
       }
     ]
@@ -1401,7 +1401,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_67: Sam Curtis (sp?)",
+    "householdId": "Household_67: Sam Curtis",
     "searchNames": [
       "sam",
       "sam curtis",
