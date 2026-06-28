@@ -1413,7 +1413,7 @@ const weddingGuestDatabase = [
     ],
     "guests": [
       {
-        "name": "Sam Curtis (sp?)",
+        "name": "Sam Curtis",
         "tier": "evening"
       }
     ]
