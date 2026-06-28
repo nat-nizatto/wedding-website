@@ -189,10 +189,57 @@
         <h2 class="section-title">RSVP</h2>
         <p class="section-lead-text">Please share your plans with us by **February 28th, 2027**.</p>
         
+        <style>
+          /* Add comfortable padding to your main action buttons */
+          .rsvp-section .btn {
+            padding: 16px 32px !important;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+          }
+
+          /* Style and add generous padding inside the accept/decline radio option cards */
+          .rsvp-section .radio-card {
+            padding: 20px 24px !important;
+            margin-bottom: 16px;
+            border-radius: 6px;
+            display: block;
+            cursor: pointer;
+          }
+
+          .rsvp-section .radio-card-content {
+            display: block;
+          }
+
+          /* Style the personalized guest headers */
+          .smart-guest-header {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin: 40px 0 20px 0;
+            text-transform: uppercase;
+            color: #111111;
+          }
+          
+          .smart-guest-name-highlight {
+            color: #b54905;
+            font-style: italic;
+            margin-left: 4px;
+          }
+
+          /* Clean separation block for each guest card */
+          .guest-card-block {
+            margin-bottom: 45px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+          }
+        </style>
+
         <div id="rsvp-portal" class="rsvp-form" style="text-align: center;">
           <div class="form-group">
             <label for="search-name" style="letter-spacing: 2px; font-weight: 600;">ENTER YOUR FULL NAME</label>
-            <input type="text" id="search-name" placeholder="e.g. Katherine Fox" style="max-width: 400px; margin: 15px auto; display: block; text-align: center;">
+            <input type="text" id="search-name" placeholder="e.g. Katherine Fox" style="max-width: 400px; margin: 15px auto; display: block; text-align: center; padding: 14px;">
             <span class="error-msg" id="lookup-error" style="display: none; color: #b54905; margin-bottom: 15px;"></span>
           </div>
           <button type="button" id="btn-find-invite" class="btn btn-primary" style="margin: 0 auto;">FIND MY INVITATION</button>
@@ -200,14 +247,13 @@
 
         <form id="rsvp-form" class="rsvp-form" action="https://api.web3forms.com/submit" method="POST" style="display: none;">
           <input type="hidden" name="access_key" value="b549059b-16f1-4473-adde-bf17cfb1f7c1">
-          
           <input type="hidden" id="wb3-household" name="household_id">
 
           <div id="dynamic-guests-container"></div>
 
           <div class="form-group" style="margin-top: 40px; border-top: 2px solid rgba(0,0,0,0.05); padding-top: 30px;">
             <label for="song-request">DANCE FLOOR ANTHEM</label>
-            <input type="text" id="song-request" name="song_request" placeholder="What song will get you dancing?">
+            <input type="text" id="song-request" name="song_request" placeholder="What song will get you dancing?" style="padding: 14px;">
           </div>
 
           <button type="submit" class="btn btn-primary full-width">SUBMIT RSVP</button>
@@ -222,11 +268,11 @@
       </div>
     </section>
 
-<template id="guest-card-template">
+    <template id="guest-card-template">
       <div class="guest-card-block">
         
         <h3 class="smart-guest-header">
-          GUEST: <span class="guest-display-name" style="color: #b54905; font-style: italic;"></span>
+          GUEST: <span class="guest-display-name class-accent-highlight" style="color: #b54905; font-style: italic;"></span>
         </h3>
         
         <input type="hidden" class="hidden-guest-name">
@@ -290,13 +336,12 @@
 
           <div class="form-group">
             <label class="label-dietary">DIETARY RESTRICTIONS & ALLERGIES</label>
-            <textarea class="textarea-dietary" rows="2" placeholder="e.g. Gluten-free, nut allergy, vegan, none..."></textarea>
+            <textarea class="textarea-dietary" rows="2" placeholder="e.g. Gluten-free, nut allergy, vegan, none..." style="padding: 12px;"></textarea>
           </div>
 
         </div>
       </div>
     </template>
-
     <hr class="section-divider">
 
     <section id="gifts" class="gifts-section scroll-reveal">
