@@ -1594,7 +1594,7 @@ document.addEventListener("DOMContentLoaded", function () {
     portalDiv.style.display = "none";
     formEl.style.display = "block";
     document.getElementById("wb3-household").value = household.householdId;
-    dynamicContainer.innerHTML = ""; // Clear old instance fields
+    dynamicContainer.innerHTML = ""; // Clear old fields cleanly
 
     household.guests.forEach((guest, index) => {
       const gNum = index + 1;
@@ -1603,7 +1603,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Clone the structural HTML directly out of your native template tag
       const clone = templateCard.content.cloneNode(true);
 
-      // Personalize display strings and data tracking arrays
+      // Personalize display strings and tracking variables
       clone.querySelector(".guest-display-name").innerText = guest.name;
       clone.querySelector(".hidden-guest-name").value = guest.name;
       clone.querySelector(".hidden-guest-name").name = `g${gNum}_name`;
@@ -1629,7 +1629,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const selectMain = clone.querySelector(".select-main");
       const selectDessert = clone.querySelector(".select-dessert");
       const textDietary = clone.querySelector(".textarea-dietary");
-      const mealsContainer = clone.querySelector(".meals-conditional-container");
+      const mealsContainer = clone.querySelector(".attendance-conditional-block"); // CRITICAL FIX: Matches Template perfectly!
 
       selectStarter.name = `g${gNum}_meal_starter`;
       selectMain.name = `g${gNum}_meal_main`;
