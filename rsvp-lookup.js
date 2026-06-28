@@ -261,18 +261,13 @@ const weddingGuestDatabase = [
   {
     "householdId": "Household_12: Peter Ross & Cristina Voinea",
     "searchNames": [
-      "christina",
-      "christina voinea",
-      "crissy",
-      "crissy voinea",
       "cristina",
       "cristina voinea",
+      "cristina ross",
       "pete",
       "pete ross",
       "peter",
       "peter ross",
-      "tina",
-      "tina voinea"
     ],
     "guests": [
       {
@@ -1258,20 +1253,15 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_58: Cristina Reed-Richards",
+    "householdId": "Household_58: Christina Reed-Richards",
     "searchNames": [
       "christina",
       "christina reed-richards",
-      "crissy",
-      "crissy reed-richards",
-      "cristina",
-      "cristina reed-richards",
-      "tina",
-      "tina reed-richards"
+      "christina reed richards",
     ],
     "guests": [
       {
-        "name": "Cristina Reed-Richards",
+        "name": "Christina Reed-Richards",
         "tier": "day"
       }
     ]
@@ -1279,12 +1269,9 @@ const weddingGuestDatabase = [
   {
     "householdId": "Household_59: Crissy Reed-Richards",
     "searchNames": [
-      "christina",
-      "christina reed-richards",
       "crissy",
       "crissy reed-richards",
-      "cristina",
-      "cristina reed-richards"
+      "crissy reed richards",
     ],
     "guests": [
       {
