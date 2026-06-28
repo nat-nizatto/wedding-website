@@ -1108,4 +1108,16 @@ a {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+   .hotel-card {
+  background-color: var(--bg-offwhite);
+  border: 1px solid var(--border-color);
+  padding: 4rem 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  transition: var(--transition-smooth);
+  text-align: center; /* <-- Just add this single line here! */
+}
 }
