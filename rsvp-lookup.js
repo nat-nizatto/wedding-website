@@ -1560,162 +1560,120 @@ document.addEventListener("DOMContentLoaded", function () {
   const portalDiv = document.getElementById("rsvp-portal");
   const formEl = document.getElementById("rsvp-form");
   const dynamicContainer = document.getElementById("dynamic-guests-container");
+  const templateCard = document.getElementById("guest-card-template");
 
-  // Trigger search on click
   btnFind.addEventListener("click", performLookup);
-
-  // Trigger search on hitting "Enter" inside input row
   searchInput.addEventListener("keypress", function(e) {
-    if (e.key === "Enter") {
-      performLookup();
-    }
+    if (e.key === "Enter") performLookup();
   });
 
-function performLookup() {
+  function performLookup() {
     const rawInput = searchInput.value.trim().toLowerCase();
     errorMsg.style.display = "none";
-
     if (!rawInput) return;
 
-    // FIX: Use .filter() instead of .find() to catch name collisions
+    // Filter array to detect name collision overlaps (like multiple Charlottes)
     const matchedHouseholds = weddingGuestDatabase.filter(household => 
       household.searchNames.includes(rawInput)
     );
 
     if (matchedHouseholds.length === 1) {
-      // Scenario 1: Exactly one clear match. Log them in!
       revealAndConfigureForm(matchedHouseholds[0]);
     } 
     else if (matchedHouseholds.length > 1) {
-      // Scenario 2: Multiple matches found (e.g., "Charlotte" or "Hill")
-      // Safely prevent login to the wrong profile and request full details
       errorMsg.innerText = `We found more than one guest matching "${searchInput.value.trim()}". Please type your full first and last name so we can find your specific invitation!`;
       errorMsg.style.display = "block";
     } 
     else {
-      // Scenario 3: No matches found at all
       errorMsg.innerText = "We couldn't find that name. Please check your spelling or try your partner's full name.";
       errorMsg.style.display = "block";
     }
   }
 
   function revealAndConfigureForm(household) {
-    // 1. Transition standard viewing blocks
     portalDiv.style.display = "none";
     formEl.style.display = "block";
     document.getElementById("wb3-household").value = household.householdId;
+    dynamicContainer.innerHTML = ""; // Clear old instance fields
 
-    // 2. Generate dynamic guest markup
-    let dynamicHtml = "";
     household.guests.forEach((guest, index) => {
       const gNum = index + 1;
-      const isDay = guest.tier === "day";
-      const acceptDesc = isDay 
-        ? "Can't wait to celebrate the full day with you!" 
-        : "Can't wait to join you for the evening reception at 7:00 PM!";
-      
-      dynamicHtml += `
-        <div class="guest-card-block" style="margin-bottom: 40px; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 30px;">
-          <h3 class="smart-guest-header">Guest ${gNum}: <span class="smart-guest-name-highlight">${guest.name}</span></h3>
-          <input type="hidden" name="g${gNum}_name" value="${guest.name}">
-          <input type="hidden" name="g${gNum}_tier" value="${guest.tier}">
+      const isDayTier = guest.tier === "day";
 
-          <div class="form-group">
-            <span class="group-label">ATTENDANCE</span>
-            <div class="radio-card-group">
-              <label class="radio-card">
-                <input type="radio" id="g${gNum}-rsvp-accept" name="g${gNum}_attendance" value="accept" checked>
-                <span class="radio-card-content">
-                  <span class="title">Accepts with pleasure</span>
-                  <span class="desc">${acceptDesc}</span>
-                </span>
-              </label>
-              
-              <label class="radio-card">
-                <input type="radio" id="g${gNum}-rsvp-decline" name="g${gNum}_attendance" value="decline">
-                <span class="radio-card-content">
-                  <span class="title">Declines with regret</span>
-                  <span class="desc">Will be celebrating from afar.</span>
-                </span>
-              </label>
-            </div>
-          </div>
+      // Clone the structural HTML directly out of your native template tag
+      const clone = templateCard.content.cloneNode(true);
 
-          <!-- Food Section (Only evaluated for Day tier guests) -->
-          <div id="g${gNum}-meals-container" class="attendance-conditional-block" style="${isDay ? "display: block;" : "display: none;"}">
-            <div class="form-group">
-              <label for="g${gNum}-meal-starter">STARTER SELECTION</label>
-              <div class="select-wrapper">
-                <select id="g${gNum}-meal-starter" name="g${gNum}_meal_starter">
-                  <option value="" disabled selected>Select a starter...</option>
-                  <option value="Meat">BBQ Beef Brisket Slider, Thrice Cooked Chunky Chips, Beetroot Slaw</option>
-                  <option value="Veggie">Tomato, Mozzarella and Basil Tarte Tatin, Roasted Pepper Giant Cous Cous, Balsamic Dressing</option>
-                </select>
-              </div>
-            </div>
+      // Personalize display strings and data tracking arrays
+      clone.querySelector(".guest-display-name").innerText = guest.name;
+      clone.querySelector(".hidden-guest-name").value = guest.name;
+      clone.querySelector(".hidden-guest-name").name = `g${gNum}_name`;
+      clone.querySelector(".hidden-guest-tier").value = guest.tier;
+      clone.querySelector(".hidden-guest-tier").name = `g${gNum}_tier`;
 
-            <div class="form-group">
-              <label for="g${gNum}-meal-main">MAIN COURSE SELECTION</label>
-              <div class="select-wrapper">
-                <select id="g${gNum}-meal-main" name="g${gNum}_meal_main">
-                  <option value="" disabled selected>Select a main course...</option>
-                  <option value="Meat">Oyster Mushroom stuffed Ballotine of Chicken wrapped in Parma Ham, Salse Verde, Roast Carrots, Dauphinoise Potatoes</option>
-                  <option value="Veggie">Vegan Sausages, Mashed Potatoes, Roast Vegetables, Onion Gravy, Crispy Onions</option>
-                </select>
-              </div>
-            </div>
+      // Set explicit names for form grouping properties
+      const radioAccept = clone.querySelector(".radio-accept");
+      const radioDecline = clone.querySelector(".radio-decline");
+      radioAccept.name = `g${gNum}_attendance`;
+      radioDecline.name = `g${gNum}_attendance`;
 
-            <div class="form-group">
-              <label for="g${gNum}-meal-dessert">DESSERT SELECTION</label>
-              <div class="select-wrapper">
-                <select id="g${gNum}-meal-dessert" name="g${gNum}_meal_dessert">
-                  <option value="" disabled selected>Select a dessert...</option>
-                  <option value="Lemon">Lemon Puddings Done Three Ways (Lemon Syllabub, Lemon Meringue Pie, Lemon Cheesecake)</option>
-                  <option value="Vegan">Vegan Chocolate and Coconut Tart, Mango and Passionfruit</option>
-                </select>
-              </div>
-            </div>
+      // Form text labels
+      const acceptDesc = clone.querySelector(".attendance-desc-text");
+      if (isDayTier) {
+        acceptDesc.innerText = "Can't wait to celebrate the full day with you!";
+      } else {
+        acceptDesc.innerText = "Can't wait to join you for the evening reception at 7:00 PM!";
+      }
 
-            <div class="form-group">
-              <label for="g${gNum}-dietary">DIETARY RESTRICTIONS & ALLERGIES</label>
-              <textarea id="g${gNum}-dietary" name="g${gNum}_dietary" rows="2" placeholder="e.g. Gluten-free, nut allergy, vegan, none..."></textarea>
-            </div>
-          </div>
-        </div>
-      `;
-    });
+      // Map unique field names for the menu blocks
+      const selectStarter = clone.querySelector(".select-starter");
+      const selectMain = clone.querySelector(".select-main");
+      const selectDessert = clone.querySelector(".select-dessert");
+      const textDietary = clone.querySelector(".textarea-dietary");
+      const mealsContainer = clone.querySelector(".meals-conditional-container");
 
-    // Inject generated HTML into the DOM
-    dynamicContainer.innerHTML = dynamicHtml;
+      selectStarter.name = `g${gNum}_meal_starter`;
+      selectMain.name = `g${gNum}_meal_main`;
+      selectDessert.name = `g${gNum}_meal_dessert`;
+      textDietary.name = `g${gNum}_dietary`;
 
-    // 3. Attach functional visibility event listeners to each row
-    household.guests.forEach((guest, index) => {
-      const gNum = index + 1;
-      const tier = guest.tier;
-      
-      const radioAccept = document.getElementById(`g${gNum}-rsvp-accept`);
-      const radioDecline = document.getElementById(`g${gNum}-rsvp-decline`);
-      const mealsContainer = document.getElementById(`g${gNum}-meals-container`);
+      // Map matching IDs to hook up custom element focus targeting label parameters
+      selectStarter.id = `g${gNum}-meal-starter`;
+      selectMain.id = `g${gNum}-meal-main`;
+      selectDessert.id = `g${gNum}-meal-dessert`;
+      textDietary.id = `g${gNum}-dietary`;
 
-      function evalMealVisibility() {
+      clone.querySelector(".label-starter").setAttribute("for", `g${gNum}-meal-starter`);
+      clone.querySelector(".label-main").setAttribute("for", `g${gNum}-meal-main`);
+      clone.querySelector(".label-dessert").setAttribute("for", `g${gNum}-meal-dessert`);
+      clone.querySelector(".label-dietary").setAttribute("for", `g${gNum}-dietary`);
+
+      // Run visibility engine checks
+      function evaluateRowState() {
         const isAttending = radioAccept.checked;
-        if (isAttending && tier === "day") {
+        
+        if (isAttending && isDayTier) {
           mealsContainer.style.display = "block";
-          mealsContainer.querySelectorAll("select").forEach(select => select.required = true);
+          selectStarter.required = true;
+          selectMain.required = true;
+          selectDessert.required = true;
         } else {
           mealsContainer.style.display = "none";
-          mealsContainer.querySelectorAll("select").forEach(select => {
-            select.required = false;
-            select.selectedIndex = 0;
-          });
+          selectStarter.required = false;
+          selectMain.required = false;
+          selectDessert.required = false;
+          selectStarter.selectedIndex = 0;
+          selectMain.selectedIndex = 0;
+          selectDessert.selectedIndex = 0;
         }
       }
 
-      radioAccept.addEventListener("change", evalMealVisibility);
-      radioDecline.addEventListener("change", evalMealVisibility);
+      // Append functional reactive listeners directly to the node tree
+      radioAccept.addEventListener("change", evaluateRowState);
+      radioDecline.addEventListener("change", evaluateRowState);
 
-      // Execute initialization verification
-      evalMealVisibility();
+      // Append live document configurations to the DOM tree container frame
+      dynamicContainer.appendChild(clone);
+      evaluateRowState(); // Initialize evaluation pass
     });
   }
 });
