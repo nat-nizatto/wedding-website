@@ -1200,4 +1200,32 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   .timeline-item::before {
     left: calc(-1.5rem - 4px);
   }
+   /* Match the layout spacing of your original static design */
+    .guest-card-block {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    /* Style the new personalized guest header tags */
+    .smart-guest-header {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin: 20px 0 25px 0;
+      text-transform: uppercase;
+      color: #111111;
+    }
+    
+    .smart-guest-name-highlight {
+      color: #b54905; /* Matches your wedding design accent token */
+      font-style: italic;
+      margin-left: 4px;
+    }
+
+    /* Fix visual jump when conditional items render */
+    .attendance-conditional-block {
+      transition: all 0.3s ease-in-out;
+    }
 }
