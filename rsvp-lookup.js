@@ -1571,20 +1571,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  function performLookup() {
+function performLookup() {
     const rawInput = searchInput.value.trim().toLowerCase();
     errorMsg.style.display = "none";
 
     if (!rawInput) return;
 
-    // Search for a matching household entry
-    const matchedHousehold = weddingGuestDatabase.find(household => 
+    // FIX: Use .filter() instead of .find() to catch name collisions
+    const matchedHouseholds = weddingGuestDatabase.filter(household => 
       household.searchNames.includes(rawInput)
     );
 
-    if (matchedHousehold) {
-      revealAndConfigureForm(matchedHousehold);
-    } else {
+    if (matchedHouseholds.length === 1) {
+      // Scenario 1: Exactly one clear match. Log them in!
+      revealAndConfigureForm(matchedHouseholds[0]);
+    } 
+    else if (matchedHouseholds.length > 1) {
+      // Scenario 2: Multiple matches found (e.g., "Charlotte" or "Hill")
+      // Safely prevent login to the wrong profile and request full details
+      errorMsg.innerText = `We found more than one guest matching "${searchInput.value.trim()}". Please type your full first and last name so we can find your specific invitation!`;
+      errorMsg.style.display = "block";
+    } 
+    else {
+      // Scenario 3: No matches found at all
+      errorMsg.innerText = "We couldn't find that name. Please check your spelling or try your partner's full name.";
       errorMsg.style.display = "block";
     }
   }
