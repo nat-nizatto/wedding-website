@@ -222,10 +222,10 @@
       </div>
     </section>
 
-    <template id="guest-card-template">
-      <div class="guest-card-block" style="margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid rgba(0,0,0,0.1);">
+<template id="guest-card-template">
+      <div class="guest-card-block">
         
-        <h3 class="smart-guest-header" style="font-family: 'Libre Baskerville', serif; font-size: 1.3rem; margin: 30px 0 15px 0;">
+        <h3 class="smart-guest-header">
           GUEST: <span class="guest-display-name" style="color: #b54905; font-style: italic;"></span>
         </h3>
         
@@ -233,7 +233,7 @@
         <input type="hidden" class="hidden-guest-tier">
 
         <div class="form-group">
-          <span class="group-label">ATTENDANCE</span>
+          <span class="group-label">ATTENDANCE STATUS</span>
           <div class="radio-card-group">
             <label class="radio-card">
               <input type="radio" class="radio-accept" value="accept" checked>
@@ -253,7 +253,7 @@
           </div>
         </div>
 
-        <div class="meals-conditional-container" style="display: block;">
+        <div class="attendance-conditional-block" style="display: block;">
           
           <div class="form-group">
             <label class="label-starter">STARTER SELECTION</label>
