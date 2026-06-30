@@ -52,7 +52,7 @@ html {
 }
 
 body {
-      background-image: linear-gradient(rgba(250, 246, 240, 0.6), rgba(250, 246, 240, 0.6)), url('background.jpg');
+      background-image: url('faded-background.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
