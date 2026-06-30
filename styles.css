@@ -52,8 +52,11 @@ html {
 }
 
 body {
-  background-color: var(--bg-cream);
-  color: var(--text-charcoal);
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;  color: var(--text-charcoal);
   font-family: var(--font-body);
   font-weight: 300;
   font-size: 1rem;
