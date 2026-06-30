@@ -325,7 +325,7 @@ a {
 
 .hero-subtitle {
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   letter-spacing: 0.3em;
   color: var(--accent-sage);
   margin-bottom: 1rem;
