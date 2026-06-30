@@ -52,7 +52,7 @@ html {
 }
 
 body {
-      background-image: url('background.jpg');
+      background-image: linear-gradient(rgba(250, 246, 240, 0.6), rgba(250, 246, 240, 0.6)), url('background.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -299,7 +299,6 @@ a {
 .hero-section {
   padding: 10rem 0 6rem 0;
   text-align: center;
-  background-color: var(--bg-cream);
   min-height: 90vh;
   display: flex;
   align-items: center;
