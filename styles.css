@@ -1,3 +1,369 @@
+Here are your complete, restored **`index.html`** and **`styles.css`** files with all your customizations—including **Cormorant Garamond 600**, **La Belle Aurore**, the subtle background image overlay, and the dynamic RSVP portal.
+
+---
+
+### `index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katherine & Nathaniel — Wedding 2027</title>
+  <meta name="description" content="The wedding celebration of Katherine Fox and Nathaniel Hill at The Ravenswood in Sussex. Thursday, 13th May 2027.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@300;400;500;600&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header id="main-header" class="site-header">
+    <div class="header-container">
+      <a href="#" class="logo" aria-label="Home">K<span class="logo-amp">&</span>N</a>
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#accommodations">Accommodations</a></li>
+          <li><a href="#rsvp" class="nav-rsvp-btn">RSVP</a></li>
+          <li><a href="#gifts">Gifts</a></li>
+          <li><a href="#faq">Q&A</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle Navigation Menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile Navigation">
+      <ul class="mobile-nav-links">
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#accommodations">Accommodations</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+        <li><a href="#gifts">Gifts</a></li>
+        <li><a href="#faq">Q&A</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <div class="hero-names-wrapper">
+          <p class="hero-subtitle">THE WEDDING OF</p>
+          <h1 class="hero-title">KATHERINE FOX<br>& NATHANIEL HILL</h1>
+        </div>
+        
+        <div class="hero-image-container">
+          <img src="images/IMG_9078 - new comp.jpg" alt="Katherine Fox & Nathaniel Hill" class="hero-image" fetchpriority="high">
+        </div>
+        
+        <div class="hero-details">
+          <time datetime="2027-05-13" class="hero-date">THURSDAY, 13TH MAY 2027</time>
+          <p class="hero-location">SHARPTHORNE, WEST SUSSEX</p>
+          <a href="#rsvp" class="btn btn-primary hero-rsvp-btn">RSVP</a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section id="schedule" class="schedule-section scroll-reveal">
+      <div class="container">
+        <h2 class="section-title">THE SCHEDULE</h2>
+        <p class="section-lead-text">We look forward to celebrating our wedding day with you. Here is the schedule for the day.</p>
+        
+        <div class="venue-info-card">
+          <div class="venue-details-text">
+            <h3>THE RAVENSWOOD</h3>
+            <p class="venue-address">Horsted Lane, Sharpthorne, East Grinstead RH19 4HY</p>
+            <p class="venue-note">Complimentary parking is available directly on-site at the venue entrance.</p>
+            <a href="https://maps.google.com/?q=The+Ravenswood+Wedding+Venue,+Horsted+Lane,+Sharpthorne,+East+Grinstead+RH19+4HY" target="_blank" rel="noopener noreferrer" class="btn btn-outline">VIEW ON MAP</a>
+          </div>
+          <div class="venue-image-container" aria-hidden="true">
+            <img src="images/Asset 4India.png" alt="Illustration of The Ravenswood Wedding Venue" class="venue-image">
+          </div>
+        </div>
+
+        <div class="schedule-grid schedule-four-cols">
+          <div class="schedule-card">
+            <time class="schedule-time">12:00 PM</time>
+            <h3>GUEST ARRIVAL</h3>
+            <p>Please arrive from noon. Take a seat in the historic rooms or manicured lawns before the ceremony begins.</p>
+          </div>
+          
+          <div class="schedule-card">
+            <time class="schedule-time">1:00 PM</time>
+            <h3>THE CEREMONY</h3>
+            <p>Join us as we exchange vows. The ceremony will begin promptly at 1:00 PM.</p>
+          </div>
+          
+          <div class="schedule-card">
+            <time class="schedule-time">3:00 PM</time>
+            <h3>WEDDING BREAKFAST</h3>
+            <p>A celebratory three-course meal will be served in the banquet suite, followed by speeches and toasts.</p>
+          </div>
+
+          <div class="schedule-card">
+            <time class="schedule-time">7:00 PM</time>
+            <h3>EVENING RECEPTION</h3>
+            <p>Evening guests arrive. Join us for cake cutting, dancing, evening food, and celebrations into the night.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section id="accommodations" class="accommodations-section scroll-reveal">
+      <div class="container">
+        <h2 class="section-title">ACCOMMODATIONS</h2>
+        <p class="section-lead-text">Here are a few suggested places to stay in the local area for guests travelling from further away.</p>
+        
+        <div class="hotels-grid hotels-four-cols">
+          <div class="hotel-card simple-hotel-card">
+            <h3>PREMIER INN EAST GRINSTEAD (FELBRIDGE)</h3>
+            <p class="hotel-desc">A comfortable, trusted hotel located about a 12-minute drive from the wedding venue.</p>
+            <p class="hotel-address-info"><strong>Address:</strong> London Rd, Felbridge, East Grinstead RH19 2QR</p>
+            <a href="https://www.premierinn.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline full-width">BOOK ROOM</a>
+          </div>
+          
+          <div class="hotel-card simple-hotel-card">
+            <h3>TRAVELODGE EAST GRINSTEAD</h3>
+            <p class="hotel-desc">Centrally located budget hotel in East Grinstead, roughly 14 minutes from the venue.</p>
+            <p class="hotel-address-info"><strong>Address:</strong> King St, East Grinstead RH19 3DJ</p>
+            <a href="https://www.travelodge.co.uk" target="_blank" rel="noopener noreferrer" class="btn btn-outline full-width">BOOK ROOM</a>
+          </div>
+
+          <div class="hotel-card simple-hotel-card">
+            <h3>THE BENT ARMS</h3>
+            <p class="hotel-desc">A charming, historic country pub offering bed and breakfast rooms, about 15 minutes away in Lindfield village.</p>
+            <p class="hotel-address-info"><strong>Address:</strong> 98 High St, Lindfield, Haywards Heath RH16 2HP</p>
+            <a href="https://www.thebentarmslindfield.co.uk" target="_blank" rel="noopener noreferrer" class="btn btn-outline full-width">BOOK ROOM</a>
+          </div>
+
+          <div class="hotel-card simple-hotel-card">
+            <h3>THE CROWN INN</h3>
+            <p class="hotel-desc">A traditional country inn and rooms located in the nearby village of Horsted Keynes, 10 minutes from the venue.</p>
+            <p class="hotel-address-info"><strong>Address:</strong> The Green, Horsted Keynes, Haywards Heath RH17 7AW</p>
+            <a href="https://www.thecrowninn-horstedkeynes.co.uk" target="_blank" rel="noopener noreferrer" class="btn btn-outline full-width">BOOK ROOM</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section id="rsvp" class="rsvp-section scroll-reveal">
+      <div class="container small-width">
+        <h2 class="section-title">RSVP</h2>
+        <p class="section-lead-text">Please share your plans with us by February 28th, 2027.</p>
+
+        <div id="rsvp-portal" class="rsvp-form" style="text-align: center;">
+          <div class="form-group">
+            <label for="search-name">ENTER YOUR FULL NAME</label>
+            <input type="text" id="search-name" placeholder="e.g. Katherine Fox" style="max-width: 400px; margin: 15px auto; display: block; text-align: center;">
+            <span class="error-msg" id="lookup-error"></span>
+          </div>
+          <button type="button" id="btn-find-invite" class="btn btn-primary" style="margin: 0 auto;">FIND MY INVITATION</button>
+        </div>
+
+        <form id="rsvp-form" class="rsvp-form" action="https://api.web3forms.com/submit" method="POST" style="display: none;">
+          <input type="hidden" name="access_key" value="b549059b-16f1-4473-adde-bf17cfb1f7c1">
+          <input type="hidden" id="wb3-household" name="household_id">
+
+          <div id="dynamic-guests-container"></div>
+
+          <div class="form-group" style="margin-top: 40px; border-top: 2px solid rgba(0,0,0,0.05); padding-top: 30px;">
+            <label for="song-request">DANCE FLOOR ANTHEM</label>
+            <input type="text" id="song-request" name="song_request" placeholder="What song will get you dancing?">
+          </div>
+
+          <button type="submit" class="btn btn-primary full-width">SUBMIT RSVP</button>
+        </form>
+
+        <div id="rsvp-success" class="rsvp-success-card" hidden>
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <h3>THANK YOU</h3>
+          <p id="rsvp-success-message">Your response has been received. We are so excited to celebrate with you!</p>
+          <button id="edit-rsvp-btn" class="btn btn-outline" onclick="window.location.reload();">RSVP FOR SOMEONE ELSE</button>
+        </div>
+      </div>
+    </section>
+
+    <template id="guest-card-template">
+      <div class="guest-card-block">
+        
+        <h3 class="smart-guest-header">
+          GUEST: <span class="guest-display-name smart-guest-name-highlight"></span>
+        </h3>
+        
+        <input type="hidden" class="hidden-guest-name">
+        <input type="hidden" class="hidden-guest-tier">
+
+        <div class="form-group">
+          <span class="group-label">ATTENDANCE STATUS</span>
+          <div class="radio-card-group">
+            <label class="radio-card">
+              <input type="radio" class="radio-accept" value="accept" checked>
+              <span class="radio-card-content">
+                <span class="title">Accepts with pleasure</span>
+                <span class="attendance-desc-text">Can't wait to celebrate!</span>
+              </span>
+            </label>
+            
+            <label class="radio-card">
+              <input type="radio" class="radio-decline" value="decline">
+              <span class="radio-card-content">
+                <span class="title">Declines with regret</span>
+                <span class="desc">Will be celebrating from afar.</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="attendance-conditional-block" style="display: block;">
+          
+          <div class="form-group">
+            <label class="label-starter">STARTER SELECTION</label>
+            <div class="select-wrapper">
+              <select class="select-starter">
+                <option value="" disabled selected>Select a starter...</option>
+                <option value="Meat">BBQ Beef Brisket Slider, Thrice Cooked Chunky Chips, Beetroot Slaw</option>
+                <option value="Veggie">Tomato, Mozzarella and Basil Tarte Tatin, Roasted Pepper Giant Cous Cous, Balsamic Dressing</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="label-main">MAIN COURSE SELECTION</label>
+            <div class="select-wrapper">
+              <select class="select-main">
+                <option value="" disabled selected>Select a main course...</option>
+                <option value="Meat">Oyster Mushroom stuffed Ballotine of Chicken wrapped in Parma Ham, Salse Verde, Roast Carrots, Dauphinoise Potatoes</option>
+                <option value="Veggie">Vegan Sausages, Mashed Potatoes, Roast Vegetables, Onion Gravy, Crispy Onions</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="label-dessert">DESSERT SELECTION</label>
+            <div class="select-wrapper">
+              <select class="select-dessert">
+                <option value="" disabled selected>Select a dessert...</option>
+                <option value="Lemon">Lemon Puddings Done Three Ways (Lemon Syllabub, Lemon Meringue Pie, Lemon Cheesecake)</option>
+                <option value="Vegan">Vegan Chocolate and Coconut Tart, Mango and Passionfruit</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="label-dietary">DIETARY RESTRICTIONS & ALLERGIES</label>
+            <textarea class="textarea-dietary" rows="2" placeholder="e.g. Gluten-free, nut allergy, vegan, none..."></textarea>
+          </div>
+
+        </div>
+      </div>
+    </template>
+
+    <hr class="section-divider">
+
+    <section id="gifts" class="gifts-section scroll-reveal">
+      <div class="container small-width text-center">
+        <h2 class="section-title">HONEYMOON FUND & GIFTS</h2>
+        <p class="section-lead-text">Your presence at our wedding is the greatest gift of all. We truly do not expect any gifts; however, should you wish to celebrate with a gesture, a contribution towards our honeymoon adventures would be warmly received and appreciated.</p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section id="faq" class="faq-section scroll-reveal">
+      <div class="container small-width">
+        <h2 class="section-title">QUESTIONS & ANSWERS</h2>
+        <p class="section-lead-text">Here are some answers to common questions. If you need anything else, please reach out to us!</p>
+        
+        <div class="accordion-group">
+          <details class="faq-item" name="wedding-faq" open>
+            <summary class="faq-summary">
+              <span>What is the dress code?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-content">
+              <p>The dress code is fairly standard wedding/cocktail attire. We want you to feel dressed up but comfortable, so please don't feel any obligation to wear black tie! Both the ceremony and reception will be held indoors, but as the venue has beautiful gardens to explore, you may want to keep the lawns in mind when choosing your footwear.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" name="wedding-faq">
+            <summary class="faq-summary">
+              <span>Are children welcome?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-content">
+              <p>While we love all the little ones in our lives, our wedding day will be an adult-only event with the exception of our close nieces and nephews. We hope you can take the night off to hit the dance floor and celebrate with us!</p>
+            </div>
+          </details>
+
+          <details class="faq-item" name="wedding-faq">
+            <summary class="faq-summary">
+              <span>Is parking available at the venue?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-content">
+              <p>Yes, there is a large, complimentary on-site parking lot at the entrance of The Ravenswood. You are welcome to leave your car overnight, but it must be collected by 10:00 AM the following morning.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" name="wedding-faq">
+            <summary class="faq-summary">
+              <span>Can I bring a plus one?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-content">
+              <p>Due to capacity constraints at our venue, we are only able to accommodate the guests listed on your formal wedding invitation. Thank you for understanding.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" name="wedding-faq">
+            <summary class="faq-summary">
+              <span>When should I RSVP by?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-content">
+              <p>Please submit your RSVP form on this website by February 28th, 2027. This helps us finalize numbers and meal requests with the venue in a timely fashion.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p class="footer-names">KATHERINE & NATHANIEL</p>
+      <p class="footer-date">13TH MAY 2027 • SHRAPTHORNE, WEST SUSSEX</p>
+      <p class="footer-tagline">Made with love. See you there!</p>
+      <p class="footer-copyright">© 2027 Katherine Fox & Nathaniel Hill. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="rsvp-lookup.js"></script>
+</body>
+</html>
+
+```
+
+---
+
+### `styles.css`
+
+```css
 /* ==========================================================================
    Design System & Style Tokens
    ========================================================================== */
@@ -23,7 +389,8 @@
   --border-color-hover: rgba(115, 130, 116, 0.25);
   
   /* Typography */
-  --font-headings: 'Libre Baskerville', Baskerville, Georgia, serif;
+  --font-headings: 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'La Belle Aurore', cursive;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   
   /* Layout Spacing */
@@ -53,6 +420,11 @@ html {
 
 body {
   background-color: var(--bg-cream);
+  background-image: linear-gradient(rgba(250, 246, 240, 0.6), rgba(250, 246, 240, 0.6)), url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: var(--text-charcoal);
   font-family: var(--font-body);
   font-weight: 300;
@@ -62,6 +434,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+/* Global utility to prevent hidden elements from showing */
+[hidden] {
+  display: none !important;
 }
 
 /* Scrollbar styling */
@@ -80,15 +457,15 @@ body {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .logo {
   font-family: var(--font-headings);
-  font-weight: 400;
+  font-weight: 600;
   color: var(--text-charcoal);
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 h2.section-title {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   text-align: center;
   letter-spacing: 0.2em;
   margin-bottom: 1.5rem;
@@ -113,7 +490,7 @@ a {
   font-size: 0.85rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  padding: 1rem 2.5rem;
+  padding: 1.1rem 2.5rem;
   border-radius: 0;
   cursor: pointer;
   text-align: center;
@@ -221,7 +598,7 @@ a {
   font-family: var(--font-headings);
   font-size: 1.5rem;
   letter-spacing: 0.1em;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .main-nav {
@@ -251,7 +628,6 @@ a {
   border-color: var(--accent-pink);
 }
 
-/* Nav RSVP CTA Button specifically */
 .nav-rsvp-btn {
   background-color: var(--accent-pink-light);
   color: var(--accent-pink-dark) !important;
@@ -267,7 +643,6 @@ a {
   border-color: var(--accent-pink) !important;
 }
 
-/* Mobile Menu Toggle */
 .mobile-menu-toggle {
   display: none;
   background: none;
@@ -293,7 +668,7 @@ a {
 .hero-section {
   padding: 10rem 0 6rem 0;
   text-align: center;
-  background-color: var(--bg-cream);
+  background-color: transparent;
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -313,11 +688,12 @@ a {
 }
 
 .hero-subtitle {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  letter-spacing: 0.3em;
-  color: var(--accent-sage);
+  font-family: var(--font-script) !important;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  color: var(--accent-pink-dark);
   margin-bottom: 1rem;
+  text-transform: none !important;
 }
 
 .hero-title {
@@ -376,84 +752,6 @@ a {
 }
 
 /* ==========================================================================
-   Our Story / Timeline Section
-   ========================================================================== */
-
-.story-section {
-  padding: 8rem 0;
-}
-
-.timeline {
-  position: relative;
-  margin-top: 3rem;
-  padding-left: 2rem;
-}
-
-/* Timeline Vertical Line */
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background-color: var(--accent-pink);
-  opacity: 0.5;
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 4rem;
-}
-
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-/* Timeline Dot */
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -2rem;
-  left: calc(-2rem - 4px);
-  top: 6px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background-color: var(--bg-cream);
-  border: 1px solid var(--accent-pink-dark);
-  z-index: 2;
-  transition: var(--transition-smooth);
-}
-
-.timeline-item:hover::before {
-  background-color: var(--accent-pink-dark);
-  transform: scale(1.3);
-}
-
-.timeline-date {
-  font-family: var(--font-headings);
-  font-size: 0.9rem;
-  letter-spacing: 0.15em;
-  color: var(--accent-pink-dark);
-  margin-bottom: 0.5rem;
-}
-
-.timeline-content h3 {
-  font-family: var(--font-headings);
-  font-size: 1.1rem;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.8rem;
-  text-transform: uppercase;
-}
-
-.timeline-content p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.8;
-}
-
-/* ==========================================================================
    Schedule of Events Section
    ========================================================================== */
 
@@ -503,6 +801,8 @@ a {
   height: 100%;
   min-height: 300px;
   overflow: hidden;
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 .venue-image {
@@ -593,6 +893,7 @@ a {
   justify-content: space-between;
   gap: 1.5rem;
   transition: var(--transition-smooth);
+  text-align: center;
 }
 
 .hotel-card.simple-hotel-card {
@@ -609,12 +910,6 @@ a {
 
 .hotel-address-info strong {
   color: var(--text-charcoal);
-}
-
-.honey-gift-symbol {
-  font-size: 3rem;
-  margin-top: 2rem;
-  opacity: 0.85;
 }
 
 .hotel-card:hover {
@@ -649,37 +944,28 @@ a {
   line-height: 1.7;
 }
 
-.hotel-details-list {
-  list-style: none;
-  font-size: 0.85rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  padding: 1.2rem 0;
-}
+/* ==========================================================================
+   Honeymoon Gifts Note Section
+   ========================================================================== */
 
-.hotel-details-list li strong {
-  font-weight: 500;
-  color: var(--text-charcoal);
-  margin-right: 0.3rem;
+.gifts-section {
+  padding: 11rem 0;
 }
 
 /* ==========================================================================
-   RSVP Section
+   RSVP Section & Form Framework
    ========================================================================== */
 
 .rsvp-section {
-  padding: 8rem 0;
-  background-color: var(--bg-offwhite);
+  padding: 10rem 0;
+  background-color: rgba(255, 253, 251, 0.85);
 }
 
 .rsvp-form {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
-  margin-top: 2rem;
+  gap: 1.5rem;
+  margin-top: 3rem;
   transition: opacity 0.3s ease;
 }
 
@@ -687,10 +973,14 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  width: 100%;
 }
 
 .form-group label, 
 .group-label {
+  display: block;
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 0.75rem;
@@ -703,7 +993,7 @@ a {
 .form-group textarea,
 .form-group select {
   width: 100%;
-  padding: 1rem 1.2rem;
+  padding: 1.1rem 1.2rem;
   background-color: var(--bg-cream);
   border: 1px solid var(--border-color);
   font-family: var(--font-body);
@@ -711,6 +1001,7 @@ a {
   color: var(--text-charcoal);
   border-radius: 0;
   outline: none;
+  box-sizing: border-box;
   transition: var(--transition-fast);
 }
 
@@ -722,7 +1013,6 @@ a {
   box-shadow: 0 0 0 1px var(--accent-pink-dark);
 }
 
-/* Styling custom selects */
 .select-wrapper {
   position: relative;
   width: 100%;
@@ -750,7 +1040,6 @@ a {
   cursor: pointer;
 }
 
-/* Elegant Radio Cards */
 .radio-card-group {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -773,7 +1062,7 @@ a {
 .radio-card-content {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.4rem;
   padding: 1.5rem;
   background-color: var(--bg-cream);
   border: 1px solid var(--border-color);
@@ -782,24 +1071,26 @@ a {
 }
 
 .radio-card-content .title {
+  display: block;
   font-family: var(--font-headings);
   font-size: 0.95rem;
-  font-weight: 400;
+  font-weight: 600;
 }
 
-.radio-card-content .desc {
-  font-size: 0.75rem;
+.radio-card-content .desc,
+.radio-card-content .attendance-desc-text {
+  display: block;
+  font-size: 0.78rem;
   color: var(--text-muted);
+  line-height: 1.4;
 }
 
-/* Checked state */
 .radio-card input[type="radio"]:checked + .radio-card-content {
   border-color: var(--accent-sage-dark);
   background-color: var(--accent-sage-light);
   color: var(--accent-sage-dark);
 }
 
-/* Validation Feedback & States */
 .error-msg {
   display: none;
   font-size: 0.75rem;
@@ -807,31 +1098,49 @@ a {
   letter-spacing: 0.02em;
 }
 
-.form-group.invalid input,
-.form-group.invalid select {
-  border-color: #c94a4a;
-  background-color: #fff9f9;
-}
-
-.form-group.invalid .error-msg {
-  display: block;
-}
-
-/* Conditional Attendance Section via CSS :has() */
-/* If 'decline' is checked, hide the meal selection block */
-body:has(input[value="decline"]:checked) .attendance-conditional-block {
-  display: none;
-}
-
-/* Transition wrapper for smooth display */
 .attendance-conditional-block {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 0.5rem;
   transition: var(--transition-smooth);
 }
 
-/* Success Card */
+/* ==========================================================================
+   Dynamic Guest Custom Styles (Global Application)
+   ========================================================================== */
+
+.guest-card-block {
+  margin-bottom: 45px;
+  padding-bottom: 45px;
+  border-bottom: 1px solid rgba(44, 43, 42, 0.1);
+}
+
+.guest-card-block:last-of-type {
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.smart-guest-header {
+  font-family: var(--font-headings);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin: 35px 0 20px 0;
+  text-transform: uppercase;
+  color: var(--text-charcoal);
+}
+
+.smart-guest-name-highlight {
+  font-family: var(--font-script) !important;
+  color: var(--accent-pink-dark);
+  font-weight: 400;
+  text-transform: none !important;
+  font-size: 1.5rem;
+  margin-left: 6px;
+}
+
+/* Success Card Configuration */
 .rsvp-success-card {
   display: flex;
   flex-direction: column;
@@ -842,6 +1151,10 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   padding: 4rem;
   text-align: center;
   animation: fade-in-scale 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.rsvp-success-card[hidden] {
+  display: none !important;
 }
 
 .success-icon {
@@ -871,33 +1184,8 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
 }
 
 @keyframes fade-in-scale {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* ==========================================================================
-   Registry Section
-   ========================================================================== */
-
-.registry-section {
-  padding: 8rem 0;
-}
-
-.registry-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.registry-buttons .btn {
-  min-width: 180px;
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 /* ==========================================================================
@@ -926,7 +1214,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
 }
 
-/* Custom summary */
 .faq-summary {
   display: flex;
   justify-content: space-between;
@@ -937,11 +1224,10 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   letter-spacing: 0.05em;
   color: var(--text-charcoal);
   cursor: pointer;
-  list-style: none; /* Hides default marker in Firefox/Chrome */
+  list-style: none;
   user-select: none;
 }
 
-/* Hide webkit default summary marker */
 .faq-summary::-webkit-details-marker {
   display: none;
 }
@@ -953,7 +1239,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   display: block;
 }
 
-/* Stylized plus-minus using CSS pseudo elements */
 .faq-icon::before,
 .faq-icon::after {
   content: '';
@@ -962,7 +1247,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Horizontal line */
 .faq-icon::before {
   top: 6px;
   left: 0;
@@ -970,7 +1254,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   height: 1px;
 }
 
-/* Vertical line */
 .faq-icon::after {
   top: 0;
   left: 6px;
@@ -978,7 +1261,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   height: 14px;
 }
 
-/* Open state: rotate vertical line to hide it, making a minus */
 .faq-item[open] .faq-icon::after {
   transform: rotate(90deg);
   opacity: 0;
@@ -988,7 +1270,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
   transform: rotate(180deg);
 }
 
-/* Inner content panel styling */
 .faq-content {
   padding: 0 2.2rem 2.2rem 2.2rem;
   border-top: none;
@@ -1036,11 +1317,11 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
 }
 
 .footer-tagline {
-  font-family: var(--font-headings);
-  font-style: italic;
-  font-size: 1rem;
-  opacity: 0.65;
+  font-family: var(--font-script) !important;
+  font-size: 1.3rem;
+  opacity: 0.85;
   margin: 1.5rem 0;
+  text-transform: none !important;
 }
 
 .footer-copyright {
@@ -1055,30 +1336,20 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
    Scroll-Driven Animations & Performance
    ========================================================================== */
 
-/* Native CSS Scroll animations for browsers that support it */
 @media (prefers-reduced-motion: no-preference) {
   @supports ((animation-timeline: view()) and (animation-range: entry)) {
     @keyframes fade-in-up {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .scroll-reveal {
       animation: fade-in-up auto linear forwards;
       animation-timeline: view();
-      /* Run animation starting when element enters bottom of viewport 
-         and finish when it is 30% of the way in. */
       animation-range: entry 10% entry 45%;
     }
   }
 
-  /* Fallback scroll animation style for browsers that do not support native CSS scroll-timeline (Safari/Firefox) */
   @supports not ((animation-timeline: view()) and (animation-range: entry)) {
     .scroll-reveal {
       opacity: 0;
@@ -1134,11 +1405,10 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
 }
 
 /* ==========================================================================
-   Responsive Media Queries (Mobile-first fallback / overrides)
+   Responsive Media Queries
    ========================================================================== */
 
 @media (max-width: 1024px) {
-  /* Grid Layouts display 2x2 on tablet */
   .schedule-grid.schedule-four-cols,
   .hotels-grid.hotels-four-cols {
     grid-template-columns: repeat(2, 1fr);
@@ -1146,7 +1416,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
 }
 
 @media (max-width: 900px) {
-  /* Grid Layouts collapse */
   .venue-info-card {
     grid-template-columns: 1fr;
   }
@@ -1180,7 +1449,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
     font-size: 1rem;
   }
 
-  /* Nav menu toggle visible, normal menu hidden */
   .main-nav {
     display: none;
   }
@@ -1189,7 +1457,6 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
     display: flex;
   }
   
-  /* Hamburger open state */
   .mobile-menu-toggle[aria-expanded="true"] .hamburger-bar:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
   }
@@ -1210,26 +1477,10 @@ body:has(input[value="decline"]:checked) .attendance-conditional-block {
     padding: 5px;
   }
   
-  .registry-buttons {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-  }
-  
-  .registry-buttons .btn {
-    width: 100%;
-  }
-
   .radio-card-group {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
-  .timeline {
-    padding-left: 1.5rem;
-  }
-  
-  .timeline-item::before {
-    left: calc(-1.5rem - 4px);
-  }
 }
+
+```
