@@ -1608,49 +1608,38 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isDayTier) {
         acceptDesc.innerText = "Can't wait to celebrate the full day with you!";
       } else {
-        acceptDesc.innerText = "Can't wait to join you for the evening reception at 7:00 PM!";
+        acceptDesc.innerText = "Can't wait to join you for the evening reception at 7:30 PM!";
       }
 
-      // Map unique field names for the menu blocks
-      const selectStarter = clone.querySelector(".select-starter");
-      const selectMain = clone.querySelector(".select-main");
-      const selectDessert = clone.querySelector(".select-dessert");
+      // Map unique field names for the conditional block (Dietary & Accommodation)
       const textDietary = clone.querySelector(".textarea-dietary");
-      const mealsContainer = clone.querySelector(".attendance-conditional-block"); // CRITICAL FIX: Matches Template perfectly!
+      const checkboxVenue = clone.querySelector(".checkbox-venue");
+      const checkboxCamping = clone.querySelector(".checkbox-camping");
+      const conditionalBlock = clone.querySelector(".attendance-conditional-block");
 
-      selectStarter.name = `g${gNum}_meal_starter`;
-      selectMain.name = `g${gNum}_meal_main`;
-      selectDessert.name = `g${gNum}_meal_dessert`;
       textDietary.name = `g${gNum}_dietary`;
+      checkboxVenue.name = `g${gNum}_venue_accommodation`;
+      checkboxCamping.name = `g${gNum}_camping_accommodation`;
 
       // Map matching IDs to hook up custom element focus targeting label parameters
-      selectStarter.id = `g${gNum}-meal-starter`;
-      selectMain.id = `g${gNum}-meal-main`;
-      selectDessert.id = `g${gNum}-meal-dessert`;
       textDietary.id = `g${gNum}-dietary`;
-
-      clone.querySelector(".label-starter").setAttribute("for", `g${gNum}-meal-starter`);
-      clone.querySelector(".label-main").setAttribute("for", `g${gNum}-meal-main`);
-      clone.querySelector(".label-dessert").setAttribute("for", `g${gNum}-meal-dessert`);
       clone.querySelector(".label-dietary").setAttribute("for", `g${gNum}-dietary`);
+      checkboxVenue.id = `g${gNum}-venue`;
+      checkboxCamping.id = `g${gNum}-camping`;
 
       // Run visibility engine checks
       function evaluateRowState() {
         const isAttending = radioAccept.checked;
         
-        if (isAttending && isDayTier) {
-          mealsContainer.style.display = "block";
-          selectStarter.required = true;
-          selectMain.required = true;
-          selectDessert.required = true;
+        if (isAttending) {
+          // Show the block for ALL attending guests (so evening guests can still note allergies & accommodation)
+          conditionalBlock.style.display = "block";
         } else {
-          mealsContainer.style.display = "none";
-          selectStarter.required = false;
-          selectMain.required = false;
-          selectDessert.required = false;
-          selectStarter.selectedIndex = 0;
-          selectMain.selectedIndex = 0;
-          selectDessert.selectedIndex = 0;
+          // Hide block if they are declining
+          conditionalBlock.style.display = "none";
+          textDietary.value = "";
+          checkboxVenue.checked = false;
+          checkboxCamping.checked = false;
         }
       }
 
