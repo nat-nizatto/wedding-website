@@ -54,7 +54,7 @@ html {
 
 body {
   background-color: var(--bg-cream);
-  background-image: linear-gradient(rgba(250, 246, 240, 0.6), rgba(250, 246, 240, 0.6)), url('background.jpg');
+  background-image: linear-gradient(rgba(250, 246, 240, 0.6), rgba(250, 246, 240, 0.6)), url('background-update.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
