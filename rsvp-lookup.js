@@ -1512,19 +1512,6 @@ const weddingGuestDatabase = [
         "tier": "evening"
       }
     ]
-  },
-
-    {
-    "householdId": "Household_75: Nat Test",
-    "searchNames": [
-      "nat",
-    ],
-    "guests": [
-      {
-        "name": "Nat",
-        "tier": "day"
-      }
-    ]
   }
 ];
 
