@@ -1644,4 +1644,36 @@ document.addEventListener("DOMContentLoaded", function () {
       evaluateRowState(); // Initialize evaluation pass
     });
   }
+  // ===== Submit via fetch so guests stay on the page =====
+  const successCard = document.getElementById("rsvp-success");
+  const submitBtn = formEl.querySelector('button[type="submit"]');
+
+  formEl.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.innerText = "SENDING...";
+
+    try {
+      const response = await fetch(formEl.action, {
+        method: "POST",
+        body: new FormData(formEl),
+        headers: { "Accept": "application/json" }
+      });
+      const result = await response.json();
+
+      if (result.success) {
+        formEl.style.display = "none";
+        successCard.hidden = false;
+        successCard.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        throw new Error(result.message || "Submission failed");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Sorry, something went wrong sending your RSVP. Please try again, or contact us directly.");
+      submitBtn.disabled = false;
+      submitBtn.innerText = "SUBMIT RSVP";
+    }
+  });
 });
