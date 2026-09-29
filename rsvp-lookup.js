@@ -507,7 +507,6 @@ const weddingGuestDatabase = [
   {
     "householdId": "Household_24: Natalie Walker & Yvonne Walker",
     "searchNames": [
-      "nat",
       "nat walker",
       "natalie",
       "natalie walker",
