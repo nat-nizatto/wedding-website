@@ -1,6 +1,5 @@
 // ========================================================
 // THE MASTER GUEST LIST DATABASE (Strategy 1 - Aliases)
-// Automatically Compiled from the Contextual Guest List
 // ========================================================
 const weddingGuestDatabase = [
   {
@@ -46,7 +45,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_3: Luke Coates & Katy Ying Yu",
+    "householdId": "Household_3: Luke Coates & Katy",
     "searchNames": [
       "katie",
       "katie yu",
@@ -262,12 +261,12 @@ const weddingGuestDatabase = [
     "householdId": "Household_12: Peter Ross & Cristina Voinea",
     "searchNames": [
       "cristina",
-      "cristina voinea",
       "cristina ross",
+      "cristina voinea",
       "pete",
       "pete ross",
       "peter",
-      "peter ross",
+      "peter ross"
     ],
     "guests": [
       {
@@ -415,10 +414,21 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_19: Jade Harris & Oli Ridge",
+    "householdId": "Household_19: Jade Harris",
     "searchNames": [
       "jade",
-      "jade harris",
+      "jade harris"
+    ],
+    "guests": [
+      {
+        "name": "Jade Harris",
+        "tier": "evening"
+      }
+    ]
+  },
+  {
+    "householdId": "Household_20: Oli Ridge",
+    "searchNames": [
       "oli",
       "oli ridge",
       "oliver",
@@ -428,17 +438,13 @@ const weddingGuestDatabase = [
     ],
     "guests": [
       {
-        "name": "Jade Harris",
-        "tier": "evening"
-      },
-      {
         "name": "Oli Ridge",
         "tier": "evening"
       }
     ]
   },
   {
-    "householdId": "Household_20: Tom Gravett & Zita Tomaszewska",
+    "householdId": "Household_21: Tom Gravett & Zita Tomaszewska",
     "searchNames": [
       "thomas",
       "thomas gravett",
@@ -459,7 +465,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_21: Lucy Sheppard & Zander Sheppard",
+    "householdId": "Household_22: Lucy Sheppard & Zander Sheppard",
     "searchNames": [
       "alexander",
       "alexander sheppard",
@@ -480,10 +486,10 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_22: Ryan Page & Daniela Scial\u00f3-Page",
+    "householdId": "Household_23: Ryan Page & Daniela Scialó-Page",
     "searchNames": [
       "daniela",
-      "daniela scial\u00f3-page",
+      "daniela scialó-page",
       "ryan",
       "ryan page"
     ],
@@ -493,21 +499,20 @@ const weddingGuestDatabase = [
         "tier": "evening"
       },
       {
-        "name": "Daniela Scial\u00f3-Page",
+        "name": "Daniela Scialó-Page",
         "tier": "evening"
       }
     ]
   },
   {
-    "householdId": "Household_23: Natalie Walker & Yvonne Walker (surname?)",
+    "householdId": "Household_24: Natalie Walker & Yvonne Walker",
     "searchNames": [
       "nat",
       "nat walker",
       "natalie",
       "natalie walker",
       "yvonne",
-      "yvonne walker",
-      "yvonne walker (surname?)"
+      "yvonne walker"
     ],
     "guests": [
       {
@@ -515,13 +520,13 @@ const weddingGuestDatabase = [
         "tier": "evening"
       },
       {
-        "name": "Yvonne Walker (surname?)",
+        "name": "Yvonne Walker",
         "tier": "evening"
       }
     ]
   },
   {
-    "householdId": "Household_24: Terry Hill & Mark Hill",
+    "householdId": "Household_25: Terry Hill & Mark Hill",
     "searchNames": [
       "mark",
       "mark hill",
@@ -540,7 +545,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_25: Pamela Fox & Peter Fox",
+    "householdId": "Household_26: Pamela Fox & Peter Fox",
     "searchNames": [
       "pam",
       "pam fox",
@@ -563,7 +568,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_26: Lauren Fox-Shalders & Adam Fox-Shalders",
+    "householdId": "Household_27: Lauren Fox-Shalders & Adam Fox-Shalders",
     "searchNames": [
       "adam",
       "adam fox-shalders",
@@ -582,7 +587,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_27: Amy Ray & Ben Ray",
+    "householdId": "Household_28: Amy Ray & Ben Ray",
     "searchNames": [
       "amy",
       "amy ray",
@@ -601,7 +606,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_28: Jess Ridgers & Mike Ridgers",
+    "householdId": "Household_29: Jess Ridgers & Mike Ridgers",
     "searchNames": [
       "jess",
       "jess ridgers",
@@ -624,7 +629,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_29: Pete Docker & Domino Docker",
+    "householdId": "Household_30: Pete Docker & Domino Docker",
     "searchNames": [
       "domino",
       "domino docker",
@@ -645,7 +650,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_30: Claire Coates & Mike Coates",
+    "householdId": "Household_31: Claire Coates & Mike Coates",
     "searchNames": [
       "claire",
       "claire coates",
@@ -666,12 +671,16 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_31: Dawn Walling & Ralph Walling",
+    "householdId": "Household_32: Dawn Walling & Ralph Walling & Sylvester Walling & Victor Walling",
     "searchNames": [
       "dawn",
       "dawn walling",
       "ralph",
-      "ralph walling"
+      "ralph walling",
+      "sylvester",
+      "sylvester walling",
+      "victor",
+      "victor walling"
     ],
     "guests": [
       {
@@ -681,11 +690,19 @@ const weddingGuestDatabase = [
       {
         "name": "Ralph Walling",
         "tier": "day"
+      },
+      {
+        "name": "Sylvester Walling",
+        "tier": "day"
+      },
+      {
+        "name": "Victor Walling",
+        "tier": "day"
       }
     ]
   },
   {
-    "householdId": "Household_32: Chris Priestman & Simon Priestman",
+    "householdId": "Household_33: Chris Priestman & Simon Priestman",
     "searchNames": [
       "chris",
       "chris priestman",
@@ -706,7 +723,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_33: Kim Hoffmeister & James Hoffmeister",
+    "householdId": "Household_34: Kim Hoffmeister & James Hoffmeister",
     "searchNames": [
       "james",
       "james hoffmeister",
@@ -729,7 +746,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_34: Milly Docker & William Docker",
+    "householdId": "Household_35: Milly Docker & William Docker",
     "searchNames": [
       "bill",
       "bill docker",
@@ -756,7 +773,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_35: Amelie Priestman & Hatty Priestman",
+    "householdId": "Household_36: Amelie Priestman & Hatty Priestman",
     "searchNames": [
       "amelie",
       "amelie priestman",
@@ -772,25 +789,6 @@ const weddingGuestDatabase = [
       },
       {
         "name": "Hatty Priestman",
-        "tier": "day"
-      }
-    ]
-  },
-  {
-    "householdId": "Household_36: Sylvester Walling & Victor Walling",
-    "searchNames": [
-      "sylvester",
-      "sylvester walling",
-      "victor",
-      "victor walling"
-    ],
-    "guests": [
-      {
-        "name": "Sylvester Walling",
-        "tier": "day"
-      },
-      {
-        "name": "Victor Walling",
         "tier": "day"
       }
     ]
@@ -1256,8 +1254,8 @@ const weddingGuestDatabase = [
     "householdId": "Household_58: Christina Reed-Richards",
     "searchNames": [
       "christina",
-      "christina reed-richards",
       "christina reed richards",
+      "christina reed-richards"
     ],
     "guests": [
       {
@@ -1270,8 +1268,8 @@ const weddingGuestDatabase = [
     "householdId": "Household_59: Crissy Reed-Richards",
     "searchNames": [
       "crissy",
-      "crissy reed-richards",
       "crissy reed richards",
+      "crissy reed-richards"
     ],
     "guests": [
       {
@@ -1343,23 +1341,12 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_64: Katie Rushbrook",
+    "householdId": "Household_64: Katie Rushbrook & Oli Gokgol",
     "searchNames": [
       "kate",
       "kate rushbrook",
       "katie",
-      "katie rushbrook"
-    ],
-    "guests": [
-      {
-        "name": "Katie Rushbrook",
-        "tier": "day"
-      }
-    ]
-  },
-  {
-    "householdId": "Household_65: Oli Gokgol",
-    "searchNames": [
+      "katie rushbrook",
       "oli",
       "oli gokgol",
       "oliver",
@@ -1369,44 +1356,37 @@ const weddingGuestDatabase = [
     ],
     "guests": [
       {
+        "name": "Katie Rushbrook",
+        "tier": "day"
+      },
+      {
         "name": "Oli Gokgol",
         "tier": "day"
       }
     ]
   },
   {
-    "householdId": "Household_66: Elsa Douglas Lamb",
+    "householdId": "Household_65: Elsa Douglas Lamb & Sam",
     "searchNames": [
       "elsa",
-      "elsa douglas lamb"
+      "elsa douglas lamb",
+      "sam",
+      "samantha",
+      "samuel"
     ],
     "guests": [
       {
         "name": "Elsa Douglas Lamb",
         "tier": "day"
-      }
-    ]
-  },
-  {
-    "householdId": "Household_67: Sam Curtis",
-    "searchNames": [
-      "sam",
-      "sam curtis",
-      "sam curtis (sp?)",
-      "samantha",
-      "samantha curtis",
-      "samuel",
-      "samuel curtis"
-    ],
-    "guests": [
+      },
       {
-        "name": "Sam Curtis",
+        "name": "Sam",
         "tier": "evening"
       }
     ]
   },
   {
-    "householdId": "Household_68: Connor Cast",
+    "householdId": "Household_66: Connor Cast",
     "searchNames": [
       "connor",
       "connor cast"
@@ -1419,7 +1399,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_69: Andrea Poynter",
+    "householdId": "Household_67: Andrea Poynter",
     "searchNames": [
       "andrea",
       "andrea poynter"
@@ -1432,7 +1412,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_70: Clare Ingram",
+    "householdId": "Household_68: Clare Ingram",
     "searchNames": [
       "claire",
       "claire ingram",
@@ -1447,7 +1427,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_71: Lizzie Simpson",
+    "householdId": "Household_69: Lizzie Simpson",
     "searchNames": [
       "elizabeth",
       "elizabeth simpson",
@@ -1466,7 +1446,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_72: Georgia Robinson",
+    "householdId": "Household_70: Georgia Robinson",
     "searchNames": [
       "george",
       "george robinson",
@@ -1481,7 +1461,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_73: Diane Guinan",
+    "householdId": "Household_71: Diane Guinan",
     "searchNames": [
       "diane",
       "diane guinan"
@@ -1494,7 +1474,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_74: Paula Forsyth",
+    "householdId": "Household_72: Paula Forsyth",
     "searchNames": [
       "paula",
       "paula forsyth"
@@ -1507,7 +1487,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_75: Jess Matthews",
+    "householdId": "Household_73: Jess Matthews",
     "searchNames": [
       "jess",
       "jess matthews",
@@ -1522,7 +1502,7 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_76: Cy Connor",
+    "householdId": "Household_74: Cy Connor",
     "searchNames": [
       "cy",
       "cy connor"
