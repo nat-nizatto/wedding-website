@@ -1514,6 +1514,19 @@ const weddingGuestDatabase = [
       }
     ]
   }
+
+    {
+    "householdId": "Household_75: Nat Test",
+    "searchNames": [
+      "nat",
+    ],
+    "guests": [
+      {
+        "name": "Nat",
+        "tier": "day"
+      }
+    ]
+  }
 ];
 
 // ========================================================
