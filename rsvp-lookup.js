@@ -1512,7 +1512,7 @@ const weddingGuestDatabase = [
         "tier": "evening"
       }
     ]
-  }
+  },
 
     {
     "householdId": "Household_75: Nat Test",
