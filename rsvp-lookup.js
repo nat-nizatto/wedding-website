@@ -772,13 +772,15 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_36: Amelie Priestman & Hatty Priestman",
+    "householdId": "Household_36: Amelie Priestman & Hattie Priestman",
     "searchNames": [
       "amelie",
       "amelie priestman",
       "harriet",
       "harriet priestman",
       "hatty",
+      "hattie",
+      "hattie priestman",
       "hatty priestman"
     ],
     "guests": [
@@ -787,7 +789,7 @@ const weddingGuestDatabase = [
         "tier": "day"
       },
       {
-        "name": "Hatty Priestman",
+        "name": "Hattie Priestman",
         "tier": "day"
       }
     ]
