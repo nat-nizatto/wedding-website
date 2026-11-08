@@ -456,11 +456,11 @@ const weddingGuestDatabase = [
     "guests": [
       {
         "name": "Tom Gravett",
-        "tier": "evening"
+        "tier": "day"
       },
       {
         "name": "Zita Tomaszewska",
-        "tier": "evening"
+        "tier": "day"
       }
     ]
   },
