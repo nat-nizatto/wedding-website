@@ -1019,22 +1019,14 @@ const weddingGuestDatabase = [
     ]
   },
   {
-    "householdId": "Household_47: Marilyn Walker & Trevor Walker & Judie Walker",
+    "householdId": "Household_47: Trevor Walker & Judie Walker",
     "searchNames": [
       "judie",
       "judie walker",
-      "marilyn",
-      "marilyn walker",
-      "maz",
-      "maz walker",
       "trevor",
       "trevor walker"
     ],
     "guests": [
-      {
-        "name": "Marilyn Walker",
-        "tier": "evening"
-      },
       {
         "name": "Trevor Walker",
         "tier": "evening"
